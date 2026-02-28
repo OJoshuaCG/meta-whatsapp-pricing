@@ -175,7 +175,7 @@ def init_schema(conn: MySQLConnection) -> None:
             _SEED_MESSAGE_TYPES,
         )
         cursor.executemany(
-            "INSERT IGNORE INTO waba_market (name) VALUES (%s,)",
+            "INSERT IGNORE INTO waba_market (name) VALUES (%s)",
             [(m,) for m in _SEED_MARKETS],
         )
         logger.info(
